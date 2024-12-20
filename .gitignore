@@ -1,0 +1,77 @@
+# -----------------------------
+# Frontend (React with Vite)
+# -----------------------------
+
+# Node.js dependencies
+/frontend/node_modules/
+
+# Build output
+/frontend/dist/
+/frontend/build/
+
+# Vite cache
+/frontend/.vite/
+
+# Logs
+frontend-npm-debug.log*
+frontend-yarn-debug.log*
+frontend-yarn-error.log*
+
+# TypeScript output
+/frontend/tsconfig.tsbuildinfo
+
+# dotenv environment variable files
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+# IDEs and editors
+/frontend/.vscode/
+/frontend/.idea/
+
+# MacOS system files
+/.DS_Store
+
+# -----------------------------
+# Backend (Flask with Python)
+# -----------------------------
+
+# Python bytecode files
+/backend/**/*.pyc
+/backend/**/*.pyo
+
+# Flask specific folders (e.g., instance folder)
+backend/instance/
+
+# Virtual environment directory
+/backend/venv/
+/backend/.env/
+
+# Logs
+/backend/*.log
+/backend/**/*.log
+
+# Database files (e.g., SQLite database)
+backend/*.sqlite3
+backend/*.db
+
+# dotenv environment variable files
+/backend/.env
+/backend/.env.local
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+
+# IDEs and editors
+/backend/.vscode/
+/backend/.idea/
+
+# -----------------------------
+# General
+# -----------------------------
+
+# OS-specific files
+.DS_Store
+Thumbs.db
