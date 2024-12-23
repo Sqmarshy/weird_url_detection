@@ -1,18 +1,19 @@
 from flask import Flask, request, jsonify
-import joblib
-import re
+from flask_cors import CORS
+from classifying import run_modal
 
 app = Flask(__name__)
-model = joblib.load('phishing_model.pkl')
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         data = request.get_json()
         url = data['url']        
-        features = extract_features(url)
-        prediction = model.predict([features])[0]
-        result = {'prediction': 'Phishing' if prediction == 1 else 'Legitimate'}
+        prediction = run_modal(url)
+        result = {'prediction': 'Phishing' if prediction == 1 else 'Safe'}
+        print((result))
+        print(url)
         return jsonify(result), 200
 
     except Exception as e:
@@ -21,13 +22,6 @@ def predict():
 @app.route('/status', methods=['GET'])
 def status():
     return jsonify({'status': 'Backend is running'}), 200
-
-def extract_features(url):
-    url_length = len(url)
-    num_dots = url.count('.')
-    has_https = 1 if 'https' in url else 0
-    contains_ip = 1 if re.search(r'\d+\.\d+\.\d+\.\d+', url) else 0
-    return [url_length, num_dots, has_https, contains_ip]
 
 if __name__ == '__main__':
     app.run(debug=True)

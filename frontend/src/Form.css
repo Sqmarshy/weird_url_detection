@@ -1,0 +1,101 @@
+/* Form.css */
+
+/* 1. Reset HTML & Body to eliminate default spacing and fill viewport */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Key to using flex centering on .Layout */
+}
+
+/* 2. A container that fills the screen and centers its children */
+.Layout {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+  min-height: 100vh;       /* Fill the entire viewport height */
+
+  /* Optional background styling */
+  background: linear-gradient(to bottom, #f0f2f5, #ffffff);
+  color: #333;
+}
+
+/* 3. Form styling */
+form {
+  display: flex;
+  align-items: center; /* So that input & button align in one row if desired */
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Remove extra margin if it’s pushing form downward */
+  margin: 0;
+}
+
+/* 4. The text input */
+input[type="text"] {
+  width: 300px;
+  padding: 12px 16px;
+  margin-right: 8px; /* Small spacing between input & button */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+/* 5. The button */
+button[type="submit"] {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* 6. Paragraph for showing the entered URL */
+p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* 7. Result styling classes */
+.Phishing,
+.Safe {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* 8. Phishing result color scheme */
+.Phishing {
+  background-color: #ffd6d6;
+  color: #c60000;
+  border: 1px solid #ff9b9b;
+}
+
+/* 9. Safe result color scheme */
+.Safe {
+  background-color: #d6ffd6;
+  color: #008a00;
+  border: 1px solid #9bff9b;
+}
