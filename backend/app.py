@@ -13,7 +13,6 @@ def predict():
         prediction = run_modal(url)
         result = {'prediction': 'Phishing' if prediction == 1 else 'Safe'}
         print((result))
-        print(url)
         return jsonify(result), 200
 
     except Exception as e:
