@@ -59,7 +59,3 @@ Suspicious or malicious URLs often exhibit patterns that differ from benign URLs
 - `--file <path>`: Specify a file containing multiple URLs for batch detection.
 - `--verbose`: Enable detailed logging of the detection process.
 
-Adjust the commands to match the actual script(s) in this repository.
-
-## Project Structure
-
